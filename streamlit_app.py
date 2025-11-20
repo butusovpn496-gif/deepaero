@@ -53,9 +53,6 @@ def generate_response(question):
     
     context = embedding_retriever.invoke(question)
     response = chain.invoke({"context": context, "question": question})
-    
-    with open("lection.txt", "w", encoding="utf-8") as f:
-        f.write(response)
 
     return response
 
